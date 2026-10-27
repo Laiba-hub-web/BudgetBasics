@@ -1,0 +1,10 @@
+BudgetBasics Test Data
+=======================
+All values are fictional sample values in Pakistani rupees (Rs).
+
+50-30-20: Income Rs 20,000 -> Needs Rs 10,000; Wants Rs 6,000; Savings Rs 4,000.
+Savings Goal: Target Rs 60,000; current Rs 20,000; monthly Rs 5,000 -> remaining Rs 40,000; 8 months.
+Expense sample: Food 450; Transport 200; Education 350; Entertainment 800.
+Chatbot: test need, savings, overspending, and unrelated-question fallback.
+Forms: test valid and invalid Feedback/Contact inputs.
+Search: Money Mistakes, Budgeting Basics, Needs vs Wants, Monthly Dashboard, Goals, and a no-result query.

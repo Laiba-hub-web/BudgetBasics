@@ -1,0 +1,166 @@
+{
+  "description": "Test data used to verify BudgetBasics educational modules. Values are fictional sample values in Pakistani rupees.",
+  "budgeting_basics": {
+    "monthly_income": 50000,
+    "fixed_expenses": 18000,
+    "variable_expenses": 12000,
+    "savings_target": 10000
+  },
+  "rule_tests": [
+    {
+      "income": 20000,
+      "expected_needs": 10000,
+      "expected_wants": 6000,
+      "expected_savings": 4000
+    },
+    {
+      "income": 50000,
+      "expected_needs": 25000,
+      "expected_wants": 15000,
+      "expected_savings": 10000
+    },
+    {
+      "income": "",
+      "expected": "validation error"
+    },
+    {
+      "income": -1000,
+      "expected": "validation error"
+    }
+  ],
+  "goal_tests": [
+    {
+      "name": "Laptop Fund",
+      "target": 60000,
+      "current": 20000,
+      "monthly": 5000,
+      "expected_remaining": 40000,
+      "expected_months": 8
+    },
+    {
+      "name": "Emergency Buffer",
+      "target": 30000,
+      "current": 10000,
+      "monthly": 4000,
+      "expected_remaining": 20000,
+      "expected_months": 5
+    },
+    {
+      "name": "Invalid Goal",
+      "target": -100,
+      "current": 0,
+      "monthly": 1000,
+      "expected": "validation error"
+    }
+  ],
+  "expense_tests": [
+    {
+      "date": "2026-09-01",
+      "category": "Food",
+      "description": "Lunch",
+      "amount": 450
+    },
+    {
+      "date": "2026-09-02",
+      "category": "Transport",
+      "description": "Bus fare",
+      "amount": 200
+    },
+    {
+      "date": "2026-09-03",
+      "category": "Education",
+      "description": "Notebook",
+      "amount": 350
+    },
+    {
+      "date": "2026-09-04",
+      "category": "Entertainment",
+      "description": "Movie",
+      "amount": 800
+    }
+  ],
+  "needs_wants_tests": [
+    {
+      "item": "Textbook",
+      "expected": "Need"
+    },
+    {
+      "item": "Bus pass",
+      "expected": "Need"
+    },
+    {
+      "item": "Streaming subscription",
+      "expected": "Want"
+    },
+    {
+      "item": "New gadget",
+      "expected": "Want"
+    }
+  ],
+  "chatbot_tests": [
+    {
+      "question": "What is a need?",
+      "expected": "educational response"
+    },
+    {
+      "question": "How much should I save?",
+      "expected": "educational response"
+    },
+    {
+      "question": "How do I avoid overspending?",
+      "expected": "educational response"
+    },
+    {
+      "question": "Tell me something unrelated to budgeting",
+      "expected": "safe fallback"
+    }
+  ],
+  "form_tests": [
+    {
+      "form": "Feedback",
+      "case": "valid",
+      "expected": "confirmation"
+    },
+    {
+      "form": "Feedback",
+      "case": "invalid email",
+      "expected": "validation message"
+    },
+    {
+      "form": "Contact",
+      "case": "valid",
+      "expected": "confirmation"
+    },
+    {
+      "form": "Contact",
+      "case": "short message",
+      "expected": "validation message"
+    }
+  ],
+  "search_tests": [
+    {
+      "query": "Money Mistakes",
+      "expected_route": "#mistakes"
+    },
+    {
+      "query": "Budgeting Basics",
+      "expected_route": "#basics"
+    },
+    {
+      "query": "Needs vs Wants",
+      "expected_route": "#needs"
+    },
+    {
+      "query": "Monthly Dashboard",
+      "expected_route": "#dashboard"
+    },
+    {
+      "query": "Goals",
+      "expected_route": "#goals"
+    },
+    {
+      "query": "zzzz-not-found",
+      "expected": "clear no-result message"
+    }
+  ]
+}

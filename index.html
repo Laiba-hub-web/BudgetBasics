@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BudgetBasics: a student-friendly guide to budgeting, saving and avoiding common money mistakes.">
+<title>BudgetBasics | NextGen BudgetBee</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main" id="skip">Skip to content</a>
+<div class="ticker" aria-label="Money tips"><div id="tickerText"></div></div>
+<header class="topbar">
+  <button class="iconbtn" id="menuBtn" aria-expanded="false" aria-controls="side" aria-label="Open menu">&#9776;</button>
+  <a class="logo" href="#home" aria-label="BudgetBasics home"><svg width="40" height="44" viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 41,13 41,35 22,46 3,35 3,13" fill="#f6b21b"/><path d="M3 24h38" stroke="#0a2f3a" stroke-width="3" opacity=".25"/><text x="22" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#0a2f3a" font-family="Georgia,serif">Rs</text></svg><span><strong>BudgetBasics</strong><small>NextGen BudgetBee</small></span></a>
+  <div class="odo" id="odoTop" aria-label="Visitor counter"></div><span class="grow"></span><form id="siteSearch" role="search" class="hsearch"><label class="sr" for="hsIn">Search BudgetBasics</label><input id="hsIn" type="search" placeholder="Search tips, goals, mistakes..."><button type="submit" aria-label="Search">🔍</button></form>
+  <a class="toplink" href="#about">About Us</a><a class="toplink cta" href="#contact">Contact Us</a>
+  <button class="iconbtn" id="theme" aria-pressed="false" aria-label="Toggle dark mode">&#127769;</button>
+</header>
+<div class="shell">
+<aside id="side" aria-label="Site menu"><nav id="nav" aria-label="Main navigation"></nav><p class="side-visits" id="visits"></p></aside>
+<div id="scrim"></div>
+<div class="content">
+<main id="main" tabindex="-1">
+
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="hero">
+    <div>
+      <p class="welcome"><svg width="30" height="26" viewBox="0 0 28 24" aria-hidden="true"><ellipse cx="9" cy="8" rx="6" ry="4" fill="#cfeff5" opacity=".85"/><ellipse cx="17" cy="6" rx="6" ry="4" fill="#cfeff5" opacity=".85"/><ellipse cx="14" cy="15" rx="9" ry="6" fill="#f6b21b"/><path d="M11 10v10M16 10v10" stroke="#0a2f3a" stroke-width="2.4"/></svg> Welcome, budget bee!</p>
+      <h1>Your allowance, planned before it disappears.</h1>
+      <p>BudgetBasics teaches students where money comes from, where it goes, and how small choices grow into good habits. No login, no bank details, just clear lessons and tools you can try.</p>
+      <p><a class="btn" href="#dashboard">💵 Plan My Budget</a> <a class="btn ghost" href="#goals">🎯 Start Saving</a></p>
+      <p><a class="btn small alt" href="#rule">50-30-20 calculator</a> <a class="btn small alt" href="#basics">Start learning</a> <a class="btn small alt" href="#lab">Money Lab</a></p>
+    </div>
+    <div>
+      <div class="comb" id="comb" role="img" aria-label="Honeycomb of 20 cells showing a Rs 20,000 allowance: 10 cells for needs, 6 for wants and 4 for savings."></div>
+      <ul class="legend"><li><i class="d need"></i>Needs Rs 10,000</li><li><i class="d want"></i>Wants Rs 6,000</li><li><i class="d save"></i>Savings Rs 4,000</li></ul>
+      <p class="note">Each cell is Rs 1,000 of a sample Rs 20,000 monthly allowance.</p>
+    </div>
+  </div>
+  <div class="card quick"><div><h2 style="margin-top:0">Start your monthly budget</h2><p>Type your monthly salary. We open your personal dashboard, where you add fixed bills and daily spending and see what you can spend, what you saved and where the extra went.</p></div>
+    <form id="qsForm" novalidate><label>Monthly salary or allowance (Rs)<input id="qsSalary" inputmode="decimal" placeholder="e.g. 50000"></label><p class="err" id="qsErr" role="alert"></p><button class="btn">Open my dashboard</button></form></div>
+  <div class="two-col"><div class="card totd"><h2 style="margin-top:0">💡 Budget Tip of the Day</h2><p id="totdText"></p></div>
+  <div class="card"><h2 style="margin-top:0">🏆 Your Achievements</h2><div class="badges" id="badgeStrip"></div></div></div>
+  <div class="tiles" id="facts"></div>
+  <h2>Watch a 1-minute lesson</h2>
+  <div class="card vteaser"><video autoplay muted loop playsinline poster="https://assets.mixkit.co/videos/23524/23524-thumb-360-2.jpg"><source src="https://assets.mixkit.co/videos/23524/23524-360.mp4" type="video/mp4"></video><div><h3>Give every rupee a job</h3><p>Split your money into needs, wants and savings before you spend it. Then watch more short lessons.</p><a class="btn" href="#videos">More video lessons</a></div></div>
+  <h2>Picture gallery</h2><div class="gstrip" id="hgal"></div><p><a class="btn alt" href="#gallery">See the full gallery</a></p>
+  <h2>Pick a module</h2><div class="mods" id="mods"></div>
+  <h2>Featured tips</h2><div class="grid" id="featTips"></div>
+  <div class="band"><svg width="120" height="104" viewBox="0 0 120 104" aria-hidden="true"><g fill="#f6b21b" stroke="#8a5a00" stroke-width="3"><rect x="16" y="76" width="88" height="16"/><ellipse cx="60" cy="92" rx="44" ry="12"/><rect x="16" y="54" width="88" height="16"/><ellipse cx="60" cy="70" rx="44" ry="12"/><rect x="16" y="32" width="88" height="16"/><ellipse cx="60" cy="48" rx="44" ry="12"/><ellipse cx="60" cy="32" rx="44" ry="12" fill="#ffd25e"/></g><text x="60" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#8a5a00" font-family="Georgia">Rs</text></svg><div><h2>Ready to plan your month?</h2><p>Add a few sample expenses and see your balance update instantly. Nothing is saved or sent anywhere.</p></div><a class="btn" href="#planner">Open the Budget Simulator</a></div>
+</section>
+
+<!-- BASICS -->
+<section class="view" id="v-basics" hidden>
+  <h1>Budgeting Basics</h1>
+  <p class="lead">Six ideas cover almost everything about a student budget.</p>
+  <div class="grid" id="concepts"></div>
+  <h2>Sample student monthly budget</h2>
+  <p class="note">Sample values in Rs (rupees). Edit any amount and watch the totals change.</p>
+  <div class="scroll"><table class="tbl" id="budgetTbl"><caption class="sr">Sample monthly budget</caption><thead><tr><th>Item</th><th>Category</th><th>Type</th><th class="num">Amount</th></tr></thead><tbody></tbody></table></div>
+  <div id="bSummary"></div><p><button class="btn alt small" id="bReset" type="button">Reset sample values</button></p>
+  <h2>Knowledge check</h2><div id="quiz"></div>
+  <h2>Your budgeting checklist</h2>
+  <div class="card"><div id="cklist"></div><div class="track" style="margin-top:8px"><div class="fill save" id="ckfill"></div></div><p class="note" id="cktext" aria-live="polite"></p></div>
+  <h2>Six steps to a budget</h2>
+  <ol class="steps"><li><b>Add up income.</b> Allowance, pay and gifts.</li><li><b>List fixed costs.</b> Hostel share, fees, internet.</li><li><b>Estimate variable costs.</b> Food, rides, snacks.</li><li><b>Set a savings target.</b> Start with 20% or whatever you can.</li><li><b>Track daily.</b> Write each spend down.</li><li><b>Review monthly.</b> Adjust what did not work.</li></ol>
+  <h2>Glossary</h2><div id="gloss"></div>
+  <h2>Tip library</h2>
+  <div class="row filters">
+    <label>Search tips<input type="search" id="tipSearch" placeholder="saving, needs, expenses, goals"></label>
+    <label>Topic<select id="tipTopic"><option value="all">All topics</option><option value="saving">Saving</option><option value="needs">Needs</option><option value="expenses">Expenses</option><option value="goals">Goals</option></select></label>
+    <label>Sort<select id="tipSort"><option value="az">Title A to Z</option><option value="topic">Topic</option></select></label>
+  </div>
+  <div class="grid" id="tipGrid" aria-live="polite"></div>
+  <p class="empty" id="tipEmpty" hidden>No tips match your search. Try a word like saving or needs.</p>
+  <h2>Smart tip generator</h2>
+  <p class="note">Rule-based helper that matches a common student habit to a tip.</p>
+  <div class="row"><label>My habit is<select id="habit"></select></label></div>
+  <p class="card" id="habitTip" aria-live="polite">Pick a habit to see a tip.</p>
+</section>
+
+<!-- NEEDS VS WANTS -->
+<section class="view" id="v-needs" hidden>
+  <h1>Needs vs Wants</h1>
+  <p class="lead">A need keeps you healthy, learning and moving. A want is nice to have but can wait. Decide for each item.</p>
+  <p><strong id="nwScore" aria-live="polite">Score: 0 / 0</strong></p>
+  <div id="nwList"></div>
+  <h2>Before you buy: decision guide</h2>
+  <ol class="steps">
+    <li><b>Do I need it now?</b> If yes, budget for it first.</li>
+    <li><b>Can I wait?</b> If it is not urgent, it can wait for the next wants budget.</li>
+    <li><b>Can I afford it?</b> Check your remaining wants money before deciding.</li>
+    <li><b>Will this affect my savings goal?</b> Never buy a want from your savings money.</li>
+  </ol>
+</section>
+
+<!-- 50-30-20 -->
+<section class="view" id="v-rule" hidden>
+  <h1>The 50-30-20 Rule</h1>
+  <p class="lead">Split your income into 50% needs, 30% wants and 20% savings. It is a starting guideline, and you can adjust it to your life.</p>
+  <form id="ruleForm" class="card" novalidate>
+    <label>Monthly income or allowance (Rs)<input id="ruleIncome" inputmode="decimal" placeholder="e.g. 20000"></label>
+    <label>Split style<select id="ruleMode"><option value="50,30,20">50-30-20 (balanced)</option><option value="60,20,20">60-20-20 (higher costs)</option><option value="70,20,10">70-20-10 (tight budget)</option></select></label>
+    <p class="err" id="ruleErr" role="alert"></p>
+    <button class="btn">Calculate split</button>
+  </form>
+  <div id="ruleOut" aria-live="polite"></div>
+  <p class="note">Formula: needs = income x 0.50, wants = income x 0.30, savings = income x 0.20. This is an estimate for learning purposes only, not financial advice.</p>
+</section>
+
+<!-- GOALS -->
+<section class="view" id="v-goals" hidden>
+  <h1>Savings Goals</h1>
+  <p class="lead">Give your goal a name, a target and a monthly amount. We estimate the time.</p>
+  <form id="goalForm" class="card" novalidate>
+    <div class="row">
+      <label>Goal name<input id="gName" placeholder="e.g. Laptop bag"></label>
+      <label>Target amount (Rs)<input id="gTarget" inputmode="decimal"></label>
+      <label>Saved so far (Rs)<input id="gNow" inputmode="decimal" value="0"></label>
+      <label>Monthly contribution (Rs)<input id="gMonthly" inputmode="decimal"></label>
+    </div>
+    <p class="err" id="gErr" role="alert"></p>
+    <button class="btn">Estimate my goal</button>
+  </form>
+  <div id="goalOut" aria-live="polite"></div>
+  <h2>Goal milestones</h2><div class="mstrip" id="milestones"></div>
+  <h2>Quick check</h2><div id="miniQ"></div>
+</section>
+
+<!-- BUDGET SIMULATOR -->
+<section class="view" id="v-planner" hidden>
+  <h1>Budget Simulator</h1>
+  <p class="lead">Enter your monthly salary, pick a split style, then log your daily spending. The simulator shows what is left, how much you can safely spend each day and whether you are on track.</p>
+  <p><a class="chip" href="#dashboard">💵 Open Monthly Dashboard</a> <a class="chip" href="#challenge">🔥 Daily Saving Challenge</a> <a class="chip" href="#wallet">👛 Wallet Demo (mock)</a></p>
+  <p class="note">Educational estimate only. Entries stay in this browser tab for the current session, are never stored permanently and are never sent anywhere.</p>
+  <form id="setupForm" class="card" novalidate>
+    <div class="row"><label>Monthly salary or allowance (Rs)<input id="simSalary" inputmode="decimal"></label><label>Split style<select id="simMode"></select></label><label>Daily spending limit (Rs, optional)<input id="simLimit" inputmode="decimal" placeholder="e.g. 500"></label><label>Monthly savings goal (Rs, optional)<input id="simGoal" inputmode="decimal" placeholder="e.g. 10000"></label></div>
+    <label class="ck"><input type="checkbox" id="simKeep"> Remember my data on this device (optional, off by default)</label>
+    <p class="err" id="simErr" role="alert"></p><button class="btn">Update simulator</button> <button class="btn alt" type="button" id="notifBtn">🔔 Enable notifications</button>
+  </form>
+  <div id="alertBar" class="alertbar" role="alert" hidden></div>
+  <div class="tiles" id="simStats" aria-live="polite"></div>
+  <div class="card" style="margin-top:14px"><div id="simProg"></div><p id="simStatus" class="note" aria-live="polite"></p></div>
+  <h2>Fixed monthly bills</h2>
+  <form id="fixForm" class="card" novalidate><div class="row"><label>Bill name<input id="fxName" maxlength="40" placeholder="e.g. Hostel rent"></label><label>Amount (Rs)<input id="fxAmt" inputmode="decimal"></label></div><p class="err" id="fxErr" role="alert"></p><button class="btn small">Add bill</button></form>
+  <div class="scroll"><table class="tbl"><caption class="sr">Fixed bills</caption><thead><tr><th>Bill</th><th class="num">Amount</th><th>Action</th></tr></thead><tbody id="fixBody"></tbody></table></div>
+  <h2>Log your daily spending</h2>
+  <form id="expForm" class="card" novalidate>
+    <div class="row"><label>Date<input type="date" id="eDate"></label><label>Category<select id="eCat"></select></label><label>Description<input id="eDesc" maxlength="60" placeholder="e.g. Lunch"></label><label>Amount (Rs)<input id="eAmt" inputmode="decimal"></label></div>
+    <p class="err" id="eErr" role="alert"></p>
+    <button class="btn" id="eSave">Add expense</button> <button class="btn alt" type="button" id="eClear">Clear all entries</button>
+  </form>
+  <div class="scroll"><table class="tbl"><caption class="sr">Daily expenses</caption><thead><tr><th>Date</th><th>Category</th><th>Description</th><th class="num">Amount</th><th>Actions</th></tr></thead><tbody id="expBody"></tbody></table></div>
+  <h2>Month report</h2><div class="card" id="simReport" aria-live="polite"></div>
+  <h2>Day by day</h2><div class="scroll"><table class="tbl"><caption class="sr">Spending day by day</caption><thead><tr><th>Date</th><th>Entries</th><th class="num">Spent</th><th>Limit check</th><th class="num">Left after this day</th></tr></thead><tbody id="dayBody"></tbody></table></div>
+  <h2>Category budgets</h2><div class="card" id="expBreak"></div>
+  <h2>Last 7 days</h2><div class="card"><div class="dchart" id="dchart" role="img" aria-label="Bar chart of spending for the last 7 days"></div></div>
+  <h2>Compare split styles</h2>
+  <div class="scroll"><table class="tbl"><caption class="sr">Compare split styles</caption><thead><tr><th>Style</th><th class="num">Needs</th><th class="num">Wants</th><th class="num">Savings</th><th class="num">Per day</th></tr></thead><tbody id="cmpBody"></tbody></table></div>
+  <h2>What if I save more?</h2>
+  <div class="card"><label>Extra saving per month (Rs)<input id="wiIn" inputmode="decimal" placeholder="e.g. 2000"></label><p id="wiOut" class="note" aria-live="polite"></p>
+  <label>What if I cut spending by <b id="wsVal">Rs 0</b> a month?<input type="range" id="wsIn" min="0" max="5000" step="100" value="0"></label><p id="wsOut" class="note" aria-live="polite"></p></div>
+  <h2>Can I afford it?</h2>
+  <form id="affForm" class="card" novalidate><div class="row"><label>What do you want to buy?<input id="afName" maxlength="40" placeholder="e.g. shoes"></label><label>Price (Rs)<input id="afPrice" inputmode="decimal"></label></div><p class="err" id="afErr" role="alert"></p><button class="btn small">Check</button><p id="afOut" class="callout" hidden aria-live="polite" style="margin-top:12px"></p></form>
+  <h2>Import from text</h2>
+  <div class="card"><p class="note">This site cannot connect to Easypaisa or any bank (it has no server, and the project rules forbid real transactions). You can paste lines from your own statement or SMS instead, one per line, like <b>2026-09-25, Lunch, 350</b> or <b>Rs 500 paid to Foodpanda</b>. Lines without a date count as today.</p><textarea id="impText" rows="4" aria-label="Paste spending lines"></textarea><p class="err" id="impErr" role="alert"></p><button class="btn small" id="impGo" type="button">Add these entries</button></div>
+  <p><button class="btn alt" id="copySim">Copy my summary</button> <span class="ok" id="simMsg" role="status"></span></p>
+</section>
+
+<!-- MISTAKES -->
+<section class="view" id="v-mistakes" hidden>
+  <h1>Money Mistakes</h1>
+  <p class="lead">Everyone makes these mistakes sometimes. Open a card to see the problem, a real student scenario, why it happens and a better action.</p>
+  <div id="mistakeList"></div>
+</section>
+
+<!-- INFOGRAPHICS -->
+<section class="view" id="v-infographics" hidden>
+  <h1>Infographics and Learning Gallery</h1>
+  <div class="row filters"><label>Filter by topic<select id="infoTopic"><option value="all">All topics</option><option value="needs">Needs vs Wants</option><option value="budgeting">Budgeting</option><option value="saving">Saving</option></select></label></div>
+  <div class="grid wide" id="infoGrid"></div>
+  <p class="empty" id="infoEmpty" hidden>No infographics for this topic yet.</p>
+</section>
+
+<!-- CHATBOT -->
+<section class="view" id="v-chatbot" hidden>
+  <h1>AI Chatbot Assistant</h1>
+  <p class="note">BudgetBee gives basic educational information, not professional financial advice.</p>
+  <div class="card">
+    <div class="log" id="chatLog" aria-live="polite"><div class="msg bot">Hi! I am BudgetBee. Ask me about needs, wants, saving or the 50-30-20 rule.</div></div>
+    <div class="prompts" id="prompts"></div>
+    <form id="chatForm" class="chatrow"><label class="sr" for="chatQ">Your question</label><input id="chatQ" autocomplete="off" placeholder="Type your question"><button class="btn">Ask</button></form>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="view" id="v-feedback" hidden>
+  <h1>Feedback</h1>
+  <form id="fbForm" class="card" novalidate>
+    <label>Name<input id="fbName"></label>
+    <label>Email<input id="fbEmail" type="email"></label>
+    <label>Rating<select id="fbRate"><option value="">Choose a rating</option><option>5 - Excellent</option><option>4 - Good</option><option>3 - Okay</option><option>2 - Needs work</option><option>1 - Poor</option></select></label>
+    <label>Comments<textarea id="fbMsg" rows="4"></textarea></label>
+    <p class="err" id="fbErr" role="alert"></p>
+    <button class="btn">Send feedback</button>
+  </form>
+  <p class="ok" id="fbOk" role="status"></p>
+  <p class="note">Your details are checked in your browser only. Nothing is sent or stored.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="view" id="v-contact" hidden>
+  <h1>Contact Us</h1>
+  <div class="grid">
+    <div class="card" id="siteContact"><h3>Reach the team</h3></div>
+    <form id="ctForm" class="card" novalidate>
+      <label>Name<input id="ctName"></label>
+      <label>Email<input id="ctEmail" type="email"></label>
+      <label>Phone (optional)<input id="ctPhone" type="tel" inputmode="tel"></label>
+      <label>Topic<select id="ctTopic"><option>General question</option><option>Suggest a tip</option><option>Report a problem</option></select></label>
+      <label>Message<textarea id="ctMsg" rows="4"></textarea></label>
+      <p class="err" id="ctErr" role="alert"></p>
+      <button class="btn">Send message</button>
+      <p class="ok" id="ctOk" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="view" id="v-about" hidden>
+  <h1>About Us</h1>
+  <p class="lead">BudgetBasics is a student project built to make money habits easy to learn. It is an educational site: it offers no banking, no real transactions and no stored financial records.</p>
+  <p>Creators: <b id="creators"></b></p>
+</section>
+
+<!-- MONEY LAB -->
+<section class="view" id="v-lab" hidden>
+  <h1>Money Lab</h1><p class="lead">Ten interactive tools that teach decisions, not just formulas. Pick a tool and try it. Nothing you enter is stored or sent anywhere.</p>
+  <div class="labtabs" id="labTabs" role="group" aria-label="Money Lab tools"></div>
+  <div class="card" id="labBody" aria-live="polite"></div>
+</section>
+<!-- VIDEOS -->
+<section class="view" id="v-videos" hidden>
+  <h1>Video Lessons</h1><p class="lead">Short clips with key takeaways. Watch, then try the calculators.</p>
+  <div class="grid wide" id="vgrid"></div><p class="note">Clips are free stock videos from Mixkit (Mixkit licence). They need an internet connection.</p>
+</section>
+<!-- GALLERY -->
+<section class="view" id="v-gallery" hidden>
+  <h1>Picture Gallery</h1><p class="lead">Everyday things that shape a student budget. Tap a picture for a tip.</p>
+  <div class="gallery" id="galleryGrid"></div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="view" id="v-dashboard" hidden>
+  <h1>Monthly Budget Dashboard</h1>
+  <p class="lead">Your income, expenses, savings and remaining balance in one place. Uses the same numbers as the Budget Simulator.</p>
+  <div class="row"><label>Reviewing month<select id="dashMonth"></select></label></div>
+  <div class="dcards" id="dashCards"></div>
+  <div class="card" style="margin-top:14px"><div id="dashProg"></div><p id="dashHealth" class="health" aria-live="polite"></p></div>
+  <h2>Monthly Review</h2><div class="card" id="dashReview" aria-live="polite"></div>
+  <h2>Smart suggestions</h2><div class="card" id="dashTips" aria-live="polite"></div>
+  <p class="note">If you have not set up the Budget Simulator yet, <a href="#planner">start there</a> to see real numbers here.</p>
+</section>
+
+<!-- DAILY SAVING CHALLENGE -->
+<section class="view" id="v-challenge" hidden>
+  <h1>Daily Saving Challenge</h1>
+  <p class="lead">Small daily actions build a saving habit. Tick each day as you complete it. Your progress stays in this browser tab.</p>
+  <h2>7-Day Challenge</h2>
+  <div class="track" style="margin-bottom:6px"><div class="fill save" id="ch7fill"></div></div><p class="note" id="ch7text"></p>
+  <div id="ch7list"></div>
+  <h2>30-Day Challenge</h2>
+  <div class="track" style="margin-bottom:6px"><div class="fill save" id="ch30fill"></div></div><p class="note" id="ch30text"></p>
+  <div class="daygrid" id="ch30grid"></div>
+  <p><button class="btn alt small" id="chReset" type="button">Reset my progress</button></p>
+</section>
+
+<!-- WALLET DEMO -->
+<section class="view" id="v-wallet" hidden>
+  <h1>Connect Wallet &ndash; Demo</h1>
+  <p class="lead">A mock wallet screen only. BudgetBasics is an educational project and never connects to a real Easypaisa, JazzCash or bank account, and never asks for a PIN, password, OTP or card number.</p>
+  <div class="card"><p><b>👛 Demo wallet:</b> Student Sample Account &middot; Balance shown is sample data.</p>
+  <div class="scroll"><table class="tbl"><caption class="sr">Sample wallet transactions</caption><thead><tr><th>Category</th><th>Description</th><th class="num">Amount</th></tr></thead><tbody id="walletBody"></tbody></table></div>
+  <p><button class="btn" id="walletAdd">Add these sample transactions to my Budget Simulator</button> <span class="ok" id="walletMsg" role="status"></span></p></div>
+  <p class="note">In a real product this screen would use an official payment API and a secure backend. That is out of scope for this educational project.</p>
+</section>
+
+<!-- SEARCH RESULTS -->
+<section class="view" id="v-search" hidden>
+  <h1>Search Results</h1>
+  <form id="srForm" class="card" novalidate><label>Search BudgetBasics<input id="srIn" type="search" placeholder="e.g. saving, needs, goals"></label><button class="btn small">Search</button></form>
+  <p class="note" id="srCount" aria-live="polite"></p>
+  <div class="grid" id="srResults" aria-live="polite"></div>
+  <p class="empty" id="srEmpty" hidden>No matching content found. Try another keyword.</p>
+</section>
+
+<!-- SITEMAP -->
+<section class="view" id="v-sitemap" hidden>
+  <h1>Sitemap</h1>
+  <p class="lead">Home se har section tak ka complete navigation map. Kisi bhi box par tap karke page open karein.</p><div id="sitemapList"></div>
+</section>
+</main>
+</div></div>
+<footer><div class="wrap">
+  <div class="fcols">
+    <div class="fbrand"><a class="logo" href="#home"><svg width="40" height="44" viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 41,13 41,35 22,46 3,35 3,13" fill="#f6b21b"/><path d="M3 24h38" stroke="#0a2f3a" stroke-width="3" opacity=".25"/><text x="22" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#0a2f3a" font-family="Georgia,serif">Rs</text></svg><span><strong>BudgetBasics</strong><small>NextGen BudgetBee</small></span></a>
+      <p>A free, friendly guide to budgeting, saving and better money habits for students.</p><div class="chips" id="footSocial"></div></div>
+    <div><h3>Learn</h3><ul id="fLearn"></ul></div>
+    <div><h3>Tools</h3><ul id="fTools"></ul></div>
+    <div><h3>Company</h3><ul id="fCo"></ul></div>
+  </div>
+  <div class="fbot">Educational content only, not financial advice. No banking, no stored records. External links open in a new tab.</div>
+</div></footer>
+<button id="toTop" aria-label="Back to top" hidden><svg viewBox="0 0 44 44" aria-hidden="true"><circle class="rb" cx="22" cy="22" r="19"/><circle class="rf" id="ring" cx="22" cy="22" r="19"/></svg>&#8593;</button>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="gDlg"><h2 id="gT"></h2><p id="gP"></p><button class="btn" id="gX">Close</button></dialog>
+<div id="bottomTicker" aria-label="Live time and date"><div id="btText"></div></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/enhance.js"></script>
+</body>
+</html>
